@@ -33,7 +33,7 @@ class KoeConfiguration(val serverConfig: ServerConfig) {
 
     @Bean
     fun koeOptions(): KoeOptions = KoeOptions.builder().apply {
-        setGatewayVersion(GatewayVersion.V8)
+        setGatewayVersion(GatewayVersion.V4)
 
         val systemType: SystemType? = try {
             SystemType(DefaultArchitectureTypes.detect(), DefaultOperatingSystemTypes.detect())
