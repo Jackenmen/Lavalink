@@ -30,6 +30,12 @@ allprojects {
         maven("https://m2.dv8tion.net/releases")
         maven("https://maven.lavalink.dev/releases")
         maven("https://maven.lavalink.dev/snapshots")
+        maven("https://maven.pkg.github.com/Jackenmen/libdave-jvm") {
+            credentials {
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
+                password = project.findProperty("gpr.token") as String? ?: System.getenv("GITHUB_TOKEN")
+            }
+        }
         maven("https://jitpack.io") // build projects directly from GitHub
     }
 }

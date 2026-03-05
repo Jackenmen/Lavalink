@@ -26,6 +26,9 @@ jobs:
         uses: gradle/actions/setup-gradle@v5
 
       - name: Execute Gradle build
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./gradlew build
 
       - name: Upload Artifacts
